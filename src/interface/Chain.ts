@@ -1,6 +1,6 @@
 import { Block } from "../@types/Block";
 import { Utils } from "./Utils";
-import blake from "blakejs";
+import { blake2sHex } from "blakejs";
 
 export class Chain {
   _blocks: Block[] = [];
@@ -19,7 +19,7 @@ export class Chain {
       data: this.utils.jsonToBinary({ data: "Hello world" }),
     };
 
-    const hash = blake.blake2bHex(JSON.stringify(geneSisTemp));
+    const hash = blake2sHex(JSON.stringify(geneSisTemp));
 
     const geneSisBlock: Block = {
       hash: hash,

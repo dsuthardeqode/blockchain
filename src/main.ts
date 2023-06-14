@@ -7,7 +7,7 @@ function main() {
 
   const latest = newChain.getLatestBlock();
 
-  console.log(utils.binaryToJson(latest.data));
+  console.log(latest, utils.binaryToJson(latest.data));
 }
 
 main();
